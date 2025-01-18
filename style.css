@@ -943,3 +943,111 @@ footer {
     }
 }
 
+/* Header responsive styles */
+@media (max-width: 991px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-brand img.logo {
+        width: 40px;
+        height: auto;
+    }
+
+    /* Cache la barre de navigation par défaut */
+    .navbar-collapse {
+        position: fixed;
+        top: 72px; /* Hauteur du header */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 72px);
+        background-color: #8B1538;
+        transition: left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    /* Affiche la barre de navigation quand elle est active */
+    .navbar-collapse.show {
+        left: 0;
+    }
+
+    /* Style du menu hamburger */
+    .navbar-toggler {
+        display: block;
+        border: none;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        background: transparent;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Réorganisation de la navigation */
+    .navbar-nav {
+        margin: 0;
+        padding: 20px 0;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 12px;
+        font-size: 18px;
+        width: 100%;
+        display: block;
+    }
+
+    /* Style du dropdown */
+    .dropdown-menu {
+        position: static;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .dropdown-item {
+        color: white !important;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Style de la barre de recherche */
+    .d-flex {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .recherche {
+        width: 90%;
+        max-width: 300px;
+    }
+}
