@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - SAÉ S1.03</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&family=Sansita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://iutparis-seine.u-paris.fr" target="_blank">
+                    <img src="images/accueil/logo.jpg" alt="Logo UA" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"></li>
+                            <a class="nav-link active" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="questions.html">Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="installation.html">Installation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manipulations.html">Manipulations</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                Configuration
+                            </a>
+                            <ul class="dropdown-menu dropdown-hover">
+                                <li><a class="dropdown-item" href="apache.html">Apache</a></li>
+                                <li><a class="dropdown-item" href="webstorm.html">Webstorm</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control recherche" type="search" placeholder="Rechercher...">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banniere">
+            <h1>SAÉ S1.03</h1>
+            <p>Le but de cette SAÉ est dans un premier temps de s'initier à la
+                <br>technique de virtualisation puis d'installer un serveur web sur
+                <br>une machine virtuelle afin de l'utiliser.</p>
+        </section>
+
+        <section class="gantt">
+            <img src="images/accueil/Task 1.png" alt="Diagramme de Gantt" class="img-fluid">
+        </section>
+
+        <hr class="ligne-separation">
+
+    <section class="sommaire-accueil">
+        <h2>Sommaire</h2>
+        <div class="grille-sommaire-accueil">
+            <section class="gauche">
+                <article class="carte-sommaire carte1">
+                    <a href="questions.html">
+                        <img src="images/accueil/696246c61551d4e0137c86212ba6ff8d.png" alt="Questions">
+                        <h3>Questions</h3>
+                    </a>
+                </article>
+                <article class="carte-sommaire carte2">
+                    <a href="manipulations.html">
+                        <img src="images/accueil/neofetch-on-ubuntu-.png" alt="Manipulations">
+                        <h3>Manipulations</h3>
+                    </a>
+                </article>
+            </section>
+            <section class="droite">
+                <article class="carte-sommaire carte3">
+                    <a href="installation.html">
+                        <img src="images/accueil/rh03v3fa-virtualbox copy.jpg" alt="Installation">
+                        <h3>Installation</h3>
+                    </a>
+                </article>
+                <article class="carte-sommaire carte4">
+                    <a href="apache.html">
+                        <img src="images/accueil/logo-apache2.jpg" alt="Apache">
+                        <h3>Configuration<br>apache</h3>
+                    </a>
+                </article>
+                <article class="carte-sommaire carte5">
+                    <a href="webstorm.html">
+                        <img src="images/accueil/deployment.jpg" alt="Webstorm">
+                        <h3>Configuration<br>webstorm</h3>
+                    </a>
+                </article>
+            </section>
+        </div>
+    </section>
+    </main>
+
+    <footer class="text-center">
+        <section class="contacts">
+            <h2>NOS CONTACTS</h2>
+            <p>+33 01 23 45 67 89</p>
+            <p>gp3_102@iutparis.fr</p>
+        </section>
+        <p class="copyright">Copyright © VM BOX IUT. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

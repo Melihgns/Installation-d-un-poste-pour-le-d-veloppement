@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration webstorm - SAÉ S1.03</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&family=Sansita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://iutparis-seine.u-paris.fr" target="_blank">
+                    <img src="images/accueil/logo.jpg" alt="Logo UA" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"></li>
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="questions.html">Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="installation.html">Installation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manipulations.html">Manipulations</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                Configuration
+                            </a>
+                            <ul class="dropdown-menu dropdown-hover">
+                                <li><a class="dropdown-item" href="apache.html">Apache</a></li>
+                                <li><a class="dropdown-item" href="webstorm.html">Webstorm</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control recherche" type="search" placeholder="Rechercher...">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-webstorm">
+        <h1 class="title-webstorm">Installation & configuration de webstorm <img src="images/config/webstorm/WebStorm_Icon.png" alt="WebStorm Logo" id="webstorm-logo"></h1>
+        <section class="setup-content">
+            <article class="setup-text">
+                <p>Pour déployer un site Web, il faut d'abord configurer une connexion SSH pour permettre un transfert sécurisé des fichiers. Ensuite, dans WebStorm, on crée une configuration SFTP en renseignant l'adresse IP ou le nom de la machine, le nom de l'utilisateur (dans ce cas, le compte permettant l'accès au serveur), le mot de passe, et en vérifiant la configuration pour s'assurer qu'elle fonctionne correctement. Cette configuration peut être réutilisée et testée à tout moment pour établir une connexion avec la machine virtuelle.</p>
+            </article>
+            <img src="images/config/webstorm/webstorm.png" alt="Configuration WebStorm" class="setup-image">
+        </section>
+            <section class="directory-info">
+            <p>Le répertoire principal de connexion doit être spécifié pour éviter d'accéder à la racine, ce qui pourrait entraîner des problèmes de permissions. Un mapping est configuré pour indiquer comment les dossiers et fichiers locaux seront transférés vers le serveur distant. Il est aussi possible de définir un compte par défaut dans le mapping, en spécifiant le répertoire distant dans lequel les fichiers seront envoyés. Une option appelée "automatic upload" peut être activée pour envoyer automatiquement les fichiers dès qu'ils sont enregistrés localement.</p>
+        </section>
+
+        <section class="verification-info">
+            <p>Une fois les fichiers déployés, il est crucial de vérifier que le site est correctement configuré et que les modifications sont bien envoyées au serveur. Dans WebStorm, l'onglet "remote" permet de visualiser les fichiers présents sur le serveur distant et de les déployer manuellement via un clic droit et l'option "upload". Après le déploiement, une vérification permet de s'assurer que les fichiers ont bien été transférés et que la page de destination a été mise à jour.</p>
+        </section>
+
+        <section class="final-section">
+            <div class="image-wrapper">
+                <img src="images/config/webstorm/webstorm2.png" alt="Confirmation de connexion" class="config-image">
+            </div>
+            <article class="config-text">
+                <p>Enfin, pour que les modifications locales soient automatiquement envoyées au serveur distant après enregistrement, il est nécessaire de configurer le serveur par défaut dans WebStorm. Une fois configuré, l'enregistrement d'un fichier entraîne un envoi automatique vers le serveur, rendant les modifications visibles après rechargement de la page sur le navigateur. Toutefois, bien que le serveur soit mis à jour, il peut être nécessaire de recharger manuellement certains composants de l'application pour voir les changements reflétés dans l'interface.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="text-center">
+        <section class="contacts">
+            <h2>NOS CONTACTS</h2>
+            <p>+33 01 23 45 67 89</p>
+            <p>gp3_102@iutparis.fr</p>
+        </section>
+        <p class="copyright">Copyright © VM BOX IUT. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

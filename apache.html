@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration apache - SAÉ S1.03</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&family=Sansita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://iutparis-seine.u-paris.fr" target="_blank">
+                    <img src="images/accueil/logo.jpg" alt="Logo UA" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"></li>
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="questions.html">Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="installation.html">Installation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manipulations.html">Manipulations</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                Configuration
+                            </a>
+                            <ul class="dropdown-menu dropdown-hover">
+                                <li><a class="dropdown-item" href="apache.html">Apache</a></li>
+                                <li><a class="dropdown-item" href="webstorm.html">Webstorm</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control recherche" type="search" placeholder="Rechercher...">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-apache">
+        <h1 class="apache-title">Installation & configuration d'apache <img id="apache-logo" src="images/config/apache/image-removebg-preview-3.png" alt="logo apache"> </h1>
+        
+        
+        <section class="custom-accordion">
+            <!-- Introduction -->
+            <div class="accordion-section">
+                <button class="link-button" data-bs-toggle="collapse" data-bs-target="#intro">
+                    ▼ Introduction et modes de connexion réseau
+                </button>
+                <div id="intro" class="collapse content-section">
+                    <p class="content-text">Modes d'accès au réseau : Une machine virtuelle peut se connecter via trois modes : Mode pont : Permet à la machine d'obtenir une adresse IP sur le réseau local. Mode NAT : Crée un réseau distinct pour la machine virtuelle avec une adresse IP propre. Mode privé : Isole la machine des réseaux externes, tout en permettant une communication entre machines virtuelles. Préférence pour le mode pont : Favorise l'intégration au réseau local et facilite l'accès au serveur web via l'adresse IP de la machine.</p>
+                </div>
+            </div>
+
+            <!-- Choix et installation -->
+            <div class="accordion-section">
+                <button class="link-button" data-bs-toggle="collapse" data-bs-target="#choix">
+                    ▼ Choix et installation du serveur web
+                </button>
+                <div id="choix" class="collapse content-section">
+                    <p class="content-text">Choix du service : La version 2.4 du service Web est privilégiée, bien que des alternatives comme AX et P soient également reconnues. Documentation : Disponible en français, elle est complète et fournit des détails sur : l'installation via gestionnaires de paquets (ex. : apt ou yum) Installation à partir des sources, réservée aux environnements de production nécessitant une sécurité renforcée.</p>
+                </div>
+            </div>
+
+            <!-- Connexion SSH -->
+            <div class="accordion-section">
+                <button class="link-button" data-bs-toggle="collapse" data-bs-target="#ssh">
+                    ▼ Connexion SSH et installation du service
+                </button>
+                <div id="ssh" class="collapse content-section">
+                    <p class="content-text">Utilisation de SSH : Préférable pour éviter les limitations de copier-coller, permettant un accès distant via la commande ssh. Première connexion : Nécessite l'enregistrement de la clé de chiffrement pour sécuriser la communication. Installation simplifiée : Accomplie avec des gestionnaires comme apt ou yum selon la distribution Linux. Résultat : Une installation prête à l'emploi avec une page par défaut contenant des informations sur la configuration.</p>
+                </div>
+            </div>
+
+            <!-- Exploration -->
+            <div class="accordion-section">
+                <button class="link-button" data-bs-toggle="collapse" data-bs-target="#exploration">
+                    ▼ Exploration de la configuration et création d'un site web
+                </button>
+                <div id="exploration" class="collapse content-section">
+                    <p class="content-text">Structure des fichiers : Les fichiers publics sont localisés dans /var/www. Les fichiers de configuration sont situés dans /etc/apache2, notamment apache2.conf pour les paramètres globaux. Les répertoires : sites-available : Contient les configurations des sites possibles. sites-enabled : Contient les configurations activées. Création d'un site web : Nouveau répertoire (monsite) dans /var/www. Création d'un fichier test (test.html) pour valider l'affichage.</p>
+                </div>
+            </div>
+
+            <!-- Configuration -->
+            <div class="accordion-section">
+                <button class="link-button" data-bs-toggle="collapse" data-bs-target="#config">
+                    ▼ Configuration d'Apache et des fichiers de log
+                </button>
+                <div id="config" class="collapse content-section">
+                    <p class="content-text">Fichiers de configuration : apache2.conf et autres fichiers dans /etc/apache2. Gestion des logs : Erreurs : Localisées dans /var/log/apache2/error.log. Consultation avec la commande tail pour examiner les dernières erreurs. Modification des paramètres : Utilisation de l'éditeur vi pour ajuster les configurations. Application des changements via sudo systemctl reload apache2.</p>
+                </div>
+            </div>
+
+            <!-- Résolution -->
+            <div class="accordion-section">
+                <button class="link-button" data-bs-toggle="collapse" data-bs-target="#resolution">
+                    ▼ Résolution des problèmes de permission
+                </button>
+                <div id="resolution" class="collapse content-section">
+                    <p class="content-text">Problèmes courants : Permissions inadéquates sur les fichiers ou répertoires. Vérification des permissions : Avec ls -l, pour s'assurer que l'utilisateur dispose des accès nécessaires. Solution recommandée : Modifier les permissions du dossier personnel pour permettre l'accès. Utiliser le répertoire par défaut /var/www pour une meilleure organisation. Créer un lien symbolique entre un répertoire personnel et /var/www. Pour améliorer, Supprimer l'option "Indexes" pour éviter que le navigateur agisse comme un gestionnaire de fichiers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="video-placeholder">
+                <iframe 
+                    src="https://www.youtube.com/embed/8tQWWRuv4UI" 
+                    title="Installation & configuration d'apache"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="personal-section">
+            <h2>Partie personnelle</h2>
+            <p class="content-text">Au début, le problème était qu'Apache (exécuté sous l'utilisateur www-data) ne pouvait pas accéder au site web stocké dans le répertoire personnel de l'utilisateur melih (le compte utilisateur principal propriétaire des fichiers), ce qui causait une erreur "You don't have permission to access this resource". Pour résoudre cela, nous avons ajouté www-data au groupe melih avec usermod -a -G melih www-data (qui associe l'utilisateur Apache au groupe melih), ajusté les permissions du dossier personnel avec chmod 750 /home/melih (qui permet l'accès en lecture/exécution au groupe et restreint les autres), et rechargé le service Apache avec systemctl reload apache2service pour appliquer ces modifications. Ces étapes ont permis à Apache d'accéder au contenu tout en maintenant la sécurité des fichiers personnels.</p>
+            <div class="terminal-image">
+                <img src="images/config/apache/partieperso.png" alt="Terminal screenshot">
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center">
+        <section class="contacts">
+            <h2>NOS CONTACTS</h2>
+            <p>+33 01 23 45 67 89</p>
+            <p>gp3_102@iutparis.fr</p>
+        </section>
+        <p class="copyright">Copyright © VM BOX IUT. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
